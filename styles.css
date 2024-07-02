@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -33,6 +34,30 @@ body {
   -o-transition: height 0.3s;
 }
 
+.navbar a{
+  position: relative;
+  font-size: 18;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.navbar a::before{
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 5%;
+  width: 0;
+  height: 2px;
+  background: rgb(255, 255, 255);
+  transition: .3s;
+}
+
+.navbar a:hover::before{
+  width: 90%;
+  transition: .3s;
+}
+
 .logo-container {
   font-size:30px;
   font-weight: bolder;
@@ -46,13 +71,40 @@ body {
   display: flex;
   justify-content: space-around;
   gap: 50px;
-  color: black;
+  color: white;
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
 }
 
+.login{
+  position: absolute;
+  right: 0;
+  margin-right:40px;
+}
 
+.login a{
+  color: white;
+}
+
+.loginbutton{
+  background-color: #FF7400;
+  background: #FF7400 ;
+  padding: 15px 30px;
+  font-size: larger;
+  font-weight: bold;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.point{
+  height: 100px;
+  width: 100%;
+  z-index: -100;
+}
 /* ------------------------------------------------CONTENT------------------------------------------------ */
 
 /* foto dashboard */
@@ -181,125 +233,73 @@ body {
 }
 
 /* -------------------------------------------------MENU------------------------------------------------- */
-.menumakanan{
-  margin: 20px 240px;
+.konten{
+  margin: 30px 240px;
 }
-
-.menumakanantop3 a{
-  opacity: 100%;
-  transition: opacity .35s ease-in-out;
-  -webkit-transition: opacity .35s ease-in-out;
-  -moz-transition: opacity .35s ease-in-out;
-  -ms-transition: opacity .35s ease-in-out;
-  -o-transition: opacity .35s ease-in-out;
-}
-
-.menumakanantop3 a:hover{
-  opacity: 70%;
-  transition: opacity .35s ease-in-out;
-  -webkit-transition: opacity .35s ease-in-out;
-  -moz-transition: opacity .35s ease-in-out;
-  -ms-transition: opacity .35s ease-in-out;
-  -o-transition: opacity .35s ease-in-out;
-}
-
 .menumakanan-content h1{
   color:#ff7e1b ;
   font-size: 70px;
 }
 
-.menumakanantop3{
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+.item {
+  margin: 20px 0;
+  position: relative;
 }
 
-.menumakanan1{
+.item img {
+  object-fit: cover;
   width: 100%;
   height: 242px;
-  margin-top: 30px;
-}
-
-.bg1{
-  background: url(../UAS_PWD/ASSET-UAS/menumakanan1bg.jpeg);
-  background-size: cover;
-  height: 100%;
-  filter: blur(1px);
-  -webkit-filter: blur(2px);
-}
-
-.menumakanan1 p{
-  margin-top: -155px;
-  left: 820px;
-  position: absolute;
-  z-index: 10;
-  text-align: center;
-  color: white;
-  font-size: 50px;
-  font-weight: bolder;
-}
-
-.menumakanan2{
-  width: 100%;
-  height: 242px;
-  margin-top: 30px;
-}
-
-.bg2{
-  background: url(../UAS_PWD/ASSET-UAS/Roti\ Gandum\ 2.jpeg);
-  background-size: cover;
-  height: 100%;
+  display: block;
+  margin: 0 auto;
   filter: blur(2px);
   -webkit-filter: blur(2px);
 }
 
-.menumakanan2 p{
-  margin-top: -155px;
-  left: 42%;
+.item-name {
   position: absolute;
-  z-index: 10;
-  text-align: center;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
-  font-size: 50px;
+  padding: 10px;
+  font-size: 40px;
   font-weight: bolder;
-}
-
-.menumakanan3{
-  width: 100%;
-  height: 242px;
-  margin-top: 30px;
-}
-
-.bg3{
-  background: url(../UAS_PWD/ASSET-UAS/Pastry\ Pizza.jpeg);
-  background-size: cover;
-  height: 100%;
-  filter: blur(2px);
-  -webkit-filter: blur(2px);
-}
-
-.menumakanan3 p{
-  margin-top: -155px;
-  left: 890px;
-  position: absolute;
-  z-index: 10;
+  width: calc(100% - 20px);
+  max-width: 600px;
   text-align: center;
-  color: white;
-  font-size: 50px;
-  font-weight: bolder;
 }
 
-.lihatmenulainnya{
-  margin-top: 80px;
+.item a{
+  opacity: 100%;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
 }
 
-.lihatmenulainnya a{
+.item a:hover{
+  opacity: 70%;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
+}
+
+.lihatlainnya{
+  margin-top: 40px;
+}
+
+.lihatlainnya a{
   transition: .4s;
   background-color: #FFCE00;
   padding: 20px;
   border-radius: 30px;
   text-decoration: none;
   font-size: 20px;
+  color: white;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
@@ -310,14 +310,20 @@ body {
   -o-transition: .4s;
 }
 
-.lihatmenulainnya a:hover{
-  background-color: #FFA700;
+.lihatlainnya a:hover{
+  background-color: #FF7400;
   transition: .4s;
+  color: white;
   -webkit-transition: .4s;
   -moz-transition: .4s;
   -ms-transition: .4s;
   -o-transition: .4s;
 }
+
+.penutupan{
+  width: 100%;
+}
+
 /* ------------------------------------------------FOOTER------------------------------------------------ */
 
 #footer {
