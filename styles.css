@@ -1,11 +1,11 @@
 /* ------------------------------------------------GENERAL------------------------------------------------ */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    scroll-behavior: smooth;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -14,7 +14,7 @@ body {
 /* ------------------------------------------------HEADER------------------------------------------------ */
 
 .navbar {
-  background-color: #FFDE1A;
+  background-color: #ffde1a;
   display: flex;
   justify-content: center;
   gap: 1000px;
@@ -34,7 +34,7 @@ body {
   -o-transition: height 0.3s;
 }
 
-.navbar a{
+.navbar a {
   position: relative;
   font-size: 18;
   color: rgb(255, 255, 255);
@@ -42,24 +42,24 @@ body {
   text-decoration: none;
 }
 
-.navbar a::before{
-  content: '';
+.navbar a::before {
+  content: "";
   position: absolute;
   top: 100%;
   left: 5%;
   width: 0;
   height: 2px;
   background: rgb(255, 255, 255);
-  transition: .3s;
+  transition: 0.3s;
 }
 
-.navbar a:hover::before{
+.navbar a:hover::before {
   width: 90%;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .logo-container {
-  font-size:30px;
+  font-size: 30px;
   font-weight: bolder;
 }
 
@@ -67,7 +67,8 @@ body {
   margin-right: 20px;
 }
 
-.menu, .menu a {
+.menu,
+.menu a {
   display: flex;
   justify-content: space-around;
   gap: 50px;
@@ -77,19 +78,19 @@ body {
   font-size: 18px;
 }
 
-.login{
+.login {
   position: absolute;
   right: 0;
-  margin-right:40px;
+  margin-right: 40px;
 }
 
-.login a{
+.login a {
   color: white;
 }
 
-.loginbutton{
-  background-color: #FF7400;
-  background: #FF7400 ;
+.loginbutton {
+  background-color: #ff7400;
+  background: #ff7400;
   padding: 15px 30px;
   font-size: larger;
   font-weight: bold;
@@ -100,7 +101,7 @@ body {
   -o-border-radius: 10px;
 }
 
-.point{
+.point {
   height: 100px;
   width: 100%;
   z-index: -100;
@@ -124,7 +125,7 @@ body {
 
 /* TEXT-CHANGING */
 .text-changing-container {
-  background-color: #FFDE1A;
+  background-color: #ffde1a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,7 +142,7 @@ body {
 
 .text-changing {
   display: inline-block;
-  color: #FF7400;
+  color: #ff7400;
   font-size: 80px;
   position: absolute;
   width: 100%;
@@ -188,14 +189,14 @@ body {
   align-items: center;
   margin-left: 0px;
   width: 100%;
-  font-size: 20px ;
-  color:#ff7e1b  ;
+  font-size: 20px;
+  color: #ff7e1b;
 }
 
 .short-hr {
   width: 85px;
   border: 0;
-  background-color: #FF8D00 ;
+  background-color: #ff8d00;
   height: 4px;
 }
 
@@ -233,20 +234,85 @@ body {
 }
 
 /* -------------------------------------------------MENU------------------------------------------------- */
-.konten{
+.popup {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  height: 800px;
+  width: 1124px;
+  transform: translate(-50%, -50%) scale(0.5);
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.popup.show {
+  display: block;
+  animation: zoomIn 0.8s forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.closePopup {
+  position: absolute;
+  top: 7px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 48px;
+  cursor: pointer;
+  color: #ff7400;
+}
+
+.closePopup:focus {
+  outline: none;
+}
+
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(29, 29, 29, 0.5);
+  z-index: 999;
+}
+
+.konten {
   margin: 30px 240px;
 }
-.menumakanan-content h1{
-  color:#ff7e1b ;
+
+.menumakanan-content h1 {
+  color: #ff7e1b;
   font-size: 70px;
 }
 
-.item {
+.item1,
+.item2,
+.item3, 
+.item-promo {
   margin: 20px 0;
   position: relative;
 }
 
-.item img {
+.item1 img,
+.item2 img,
+.item3 img,
+.item-promo img {
   object-fit: cover;
   width: 100%;
   height: 242px;
@@ -270,31 +336,31 @@ body {
   text-align: center;
 }
 
-.item a{
+.item a {
   opacity: 100%;
-  transition: .3s;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -ms-transition: .3s;
-  -o-transition: .3s;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
 }
 
-.item a:hover{
+.item a:hover {
   opacity: 70%;
-  transition: .3s;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -ms-transition: .3s;
-  -o-transition: .3s;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
 }
 
-.lihatlainnya{
+.lihatlainnya {
   margin-top: 40px;
 }
 
-.lihatlainnya a{
-  transition: .4s;
-  background-color: #FFCE00;
+.lihatlainnya a {
+  transition: 0.4s;
+  background-color: #ffce00;
   padding: 20px;
   border-radius: 30px;
   text-decoration: none;
@@ -304,23 +370,23 @@ body {
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
-  -webkit-transition: .4s;
-  -moz-transition: .4s;
-  -ms-transition: .4s;
-  -o-transition: .4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
 }
 
-.lihatlainnya a:hover{
-  background-color: #FF7400;
-  transition: .4s;
+.lihatlainnya a:hover {
+  background-color: #ff7400;
+  transition: 0.4s;
   color: white;
-  -webkit-transition: .4s;
-  -moz-transition: .4s;
-  -ms-transition: .4s;
-  -o-transition: .4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
 }
 
-.penutupan{
+.penutupan {
   width: 100%;
 }
 
@@ -355,7 +421,7 @@ body {
   height: 80%;
   margin-right: 20px;
   margin-left: auto;
-  margin-top: 30px
+  margin-top: 30px;
 }
 
 .social-button {
@@ -369,7 +435,6 @@ body {
   background-color: #fff;
   box-shadow: 0px 0px 4px #00000027;
   transition: 0.3s;
-
 }
 
 .social-button:hover {
@@ -431,5 +496,3 @@ body {
 .instagram:hover svg {
   fill: #c13584;
 }
-
-

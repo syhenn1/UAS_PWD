@@ -21,7 +21,9 @@
                 <a href="#promo">Promo</a>
             </div>
             <div class="login">
-                <a href="#"><div class="loginbutton">Login</div></a>
+                <a href="#">
+                    <div class="loginbutton">Login</div>
+                </a>
             </div>
         </div>
     </header>
@@ -31,7 +33,7 @@
 
         <!-- FOTO DASHBOARD -->
         <div class="foto-dashboard">
-            <img src="../UAS_PWD/ASSET-UAS/dashboard-opener.jpg" alt="dashboard-awal">
+            <img src="../ASSET-UAS/dashboard-opener.jpg" alt="dashboard-awal">
         </div>
 
         <!-- TEXT-CHANGING -->
@@ -49,9 +51,10 @@
                     <h2>About Us</h2>
                 </div>
                 <div class="about-us-body">
-                    <img src="../UAS_PWD/ASSET-UAS/Qmark.png" alt="Question Mark">
+                    <img src="../ASSET-UAS/Qmark.png" alt="Question Mark">
                     <div class="text-selengkapnya">
-                        <p align="justify">Rotinien adalah perusahaan kecil skala perumahan yang menerima pemesanan roti, pastry, dsb.
+                        <p align="justify">Rotinien adalah perusahaan kecil skala perumahan yang menerima pemesanan
+                            roti, pastry, dsb.
                             Dengan layanan yang cepat, Rotinien sangat dapat diandalkan bagi warga sekitar untuk
                             acara-acara
                             baik formal dan non-formal.</p>
@@ -72,7 +75,9 @@
 
 
         <!-- MENU MAKANAN -->
-        <div class="point" id="menu"><p></p></div>
+        <div class="point" id="menu">
+            <p></p>
+        </div>
         <div class="konten">
             <div class="menumakanan-content">
                 <div class="header" id="menu">
@@ -81,34 +86,52 @@
                 </div>
                 <div class="menumakanan-content">
                     <h1>Jangan lupa baca doa <br> kawan-kawan!</h1>
-                    <div class="item"><a href="#">
-                        <img src="../UAS_PWD/ASSET-UAS/menumakanan1bg.jpeg" alt="Roti Gandum">
-                        <div class="item-name">Roti Goreng</div>
-                    </a></div>
-                    <div class="item"><a href="#">
-                        <img src="../UAS_PWD/ASSET-UAS/Roti Gandum 2.jpeg" alt="Roti Gandum Cokelat">
-                        <div class="item-name">Roti Gandum</div>
-                    </a></div>
-                    <div class="item"><a href="#">
-                        <img src="../UAS_PWD/ASSET-UAS/Pastry Pizza.jpeg" alt="Pastry Pizza">
-                        <div class="item-name">Pastry Pizza</div>
-                    </a></div>
+                    <div class="item1"><a href="#" class="popupButton" data-popup="popup1">
+                            <img src="../ASSET-UAS/menumakanan1bg.jpeg" alt="Roti Gandum">
+                            <div class="item-name">Roti Goreng</div>
+                        </a></div>
+                    <div class="item2"><a href="#" class="popupButton" data-popup="popup2">
+                            <img src="../ASSET-UAS/Roti Gandum 2.jpeg" alt="Roti Gandum Cokelat">
+                            <div class="item-name">Roti Gandum</div>
+                        </a></div>
+                    <div class="item3"><a href="#" class="popupButton" data-popup="popup3">
+                            <img src="../ASSET-UAS/Pastry Pizza.jpeg" alt="Pastry Pizza">
+                            <div class="item-name">Pastry Pizza</div>
+                        </a></div>
                     <div class="lihatlainnya"><a href="#">Lihat menu lainnya!</a></div>
                 </div>
             </div>
         </div>
 
-<!-- PROMO -->
-        <div class="point" id="promo"><p></p></div>
+        <div id="overlay" class="overlay"></div>
+
+        <div id="popup1" class="popup">
+            <button class="closePopup">&times;</button>
+            <p>POPUP1</p>
+        </div>
+        <div id="popup2" class="popup">
+            <button class="closePopup">&times;</button>
+            <p>POPUP2</p>
+        </div>
+        <div id="popup3" class="popup">
+            <button class="closePopup">&times;</button>
+            <p>POPUP3</p>
+        </div>
+        
+
+        <!-- PROMO -->
+        <div class="point" id="promo">
+            <p></p>
+        </div>
         <div class="konten">
             <div class="header">
                 <hr class="short-hr">
                 <h2>Promo Menarik</h2>
             </div>
-            <div class="item"><a href="#">
-                <img src="../UAS_PWD/ASSET-UAS/eventbg.jpg" alt="Pastry Pizza">
-                <div class="item-name">Promo Ramadhan</div>
-            </a></div>
+            <div class="item-promo"><a href="#">
+                    <img src="../ASSET-UAS/eventbg.jpg" alt="Pastry Pizza">
+                    <div class="item-name">Promo Ramadhan</div>
+                </a></div>
             <div class="lihatlainnya"><a href="#">Lihat promo lainnya!</a></div>
         </div>
 
@@ -123,12 +146,12 @@
 
     <hr class="penutupan">
 
-<!-- FOOTER -->
+    <!-- FOOTER -->
     <footer>
         <div id="footer">
             <!-- LOGO -->
             <div class="footer-container">
-                <img src="../UAS_PWD/ASSET-UAS/logo-rotinien.png" alt="Footer Logo" class="footer-logo">
+                <img src="../ASSET-UAS/logo-rotinien.png" alt="Footer Logo" class="footer-logo">
             </div>
 
             <!-- GARIS -->
