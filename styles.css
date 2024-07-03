@@ -34,7 +34,7 @@ body {
   -o-transition: height 0.3s;
 }
 
-.navbar a {
+.menu a {
   position: relative;
   font-size: 18;
   color: rgb(255, 255, 255);
@@ -42,7 +42,7 @@ body {
   text-decoration: none;
 }
 
-.navbar a::before {
+.menu a::before {
   content: "";
   position: absolute;
   top: 100%;
@@ -53,7 +53,7 @@ body {
   transition: 0.3s;
 }
 
-.navbar a:hover::before {
+.menu a:hover::before {
   width: 90%;
   transition: 0.3s;
 }
@@ -61,10 +61,12 @@ body {
 .logo-container {
   font-size: 30px;
   font-weight: bolder;
+  padding: 20px;
 }
 
-.navbar .logo {
-  margin-right: 20px;
+.logo-container a{
+  color: white;
+  text-decoration: none;
 }
 
 .menu,
@@ -82,10 +84,12 @@ body {
   position: absolute;
   right: 0;
   margin-right: 40px;
+  
 }
 
 .login a {
   color: white;
+  text-decoration: none;
 }
 
 .loginbutton {
@@ -171,7 +175,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  margin-top: -25px;
 }
 
 .about-us-content {
@@ -204,11 +208,12 @@ body {
   display: flex;
   align-items: flex-start;
   margin-top: 20px;
+  font-size: 25px;
 }
 
 .about-us-body img {
-  max-width: 300px;
-  margin-right: 20px;
+  width: 250px;
+  margin-right: 60px;
 }
 
 .text-selengkapnya {
@@ -221,16 +226,31 @@ body {
 }
 
 .baca-selengkapnya a {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #ff7e1b;
-  color: white;
-  border-radius: 20px;
+  transition: 0.4s;
+  background-color: #ffce00;
+  padding: 20px;
+  border-radius: 30px;
   text-decoration: none;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+  font-size: 20px;
+  color: white;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+}
+
+.baca-selengkapnya a:hover {
+  background-color: #ff7400;
+  transition: 0.4s;
+  color: white;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
 }
 
 /* -------------------------------------------------MENU------------------------------------------------- */
