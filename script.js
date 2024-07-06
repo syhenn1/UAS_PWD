@@ -1,3 +1,29 @@
+let username = document.getElementById('username');
+let password = document.getElementById('password');
+let i=0;
+function masuk(){  
+  console.log(username)
+    if (username.value.toLowerCase()=='admin' && password.value=='12345'){
+        alert('Akun yang anda masukkan, benar!')
+        return window.location.href="index.html"
+    }
+    else if(username.value.toLowerCase()!='admin' && password.value=='12345'){
+            return alert('Username yang anda masukkan salah.')
+    }
+    else if(username.value.toLowerCase()!='admin' && password.value!='12345') {
+        return alert('Username dan Password yang anda masukkan salah.')
+    }    
+    else{
+        while(i<4){
+            if(username.value.toLowerCase()=='admin' && password.value!='12345'){
+                i++    
+                return alert("Password yang anda masukkan salah.")
+            }
+        }
+    alert("Maaf, anda mengalami kesalahan password 5 kali")
+    return window.location.href="uts-lupa.html";
+    }
+}
 // -------------------------------TEXT-CHANGING------------------------------- //
 
 document.addEventListener("DOMContentLoaded", function () {
