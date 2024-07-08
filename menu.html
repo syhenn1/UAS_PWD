@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo-container">
+            <a href="index.html">Rotinien</a>
+        </div>
+        <div class="menu">
+            <a href="#about">About Us</a>
+            <a href="#menu">Menu</a>
+            <a href="#promo">Promo</a>
+        </div>
+        <div class="login">
+            <a href="login.html" id="loginButton">
+                <div class="loginbutton">Login</div>
+            </a>
+        </div>
+    </div>
+    <!-- FOTO DASHBOARD -->
+    <div class="video-dashboard">
+        <img src="../UAS_PWD/ASSET-UAS/dashboard-opener.jpg"></img>
+    </div>
+
+    <!-- TEXT-CHANGING -->
+    <div class="text-changing-container">
+        <div class="text-changing">
+            <span>Home baked with Love! &lt;3</span>
+        </div>
+    </div>
+    <div class="konten">
+        <div id="buttons">
+            <button class="btn" onclick="filterObjects('all')">Show All</button>
+            <button class="btn" onclick="filterObjects('fruit')">Fruits</button>
+            <button class="btn" onclick="filterObjects('colors')">Colors</button>
+            <button class="btn" onclick="filterObjects('cars')">Cars</button>
+            <button class="btn" onclick="filterObjects('animals')">Animals</button>
+        </div>
+        <div class="objects">
+            <div class="box cars">Toyota</div>
+            <div class="box cars">Honda</div>
+            <div class="box colors fruit">Orange</div>
+            <div class="box animals">Snake</div>
+            <div class="box colors">Green</div>
+            <div class="box fruit">Banana</div>
+            <div class="box colors">Red</div>
+            <div class="box fruit">Pear</div>
+            <div class="box fruit">Apple</div>
+            <div class="box cars">Volvo</div>
+            <div class="box animals">Bear</div>
+            <div class="box animals">Monkey</div>
+        </div>
+    </div>
+    <script src="menu.js"></script>
+</body>
+</html>
