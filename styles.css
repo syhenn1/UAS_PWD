@@ -272,10 +272,28 @@ body {
   z-index: 1000;
 }
 
+.popup.active {
+  display: block;
+}
+
 .popup.show {
   display: block;
   animation: zoomIn 0.8s forwards;
 }
+
+.popup p { 
+  font-size: 30px;
+  line-height: 1.6;
+}
+
+.item1A img, 
+.item2A img,
+.item3A img {
+  height: 450px;
+  width : 600px;
+  margin-left: 230px;
+}
+
 
 @keyframes zoomIn {
   0% {
@@ -302,7 +320,6 @@ body {
 .closePopup:focus {
   outline: none;
 }
-
 
 .overlay {
   display: none;
@@ -367,6 +384,7 @@ body {
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
 }
+
 
 .item a:hover {
   opacity: 70%;
