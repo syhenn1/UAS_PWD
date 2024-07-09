@@ -42,11 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (textElement) {
       const textContainer = document.querySelector(".text-changing");
       textContainer.classList.add("hidden");
-
       setTimeout(() => {
         textElement.innerHTML = messages[currentIndex];
         currentIndex = (currentIndex + 1) % messages.length;
-
         textContainer.classList.remove("hidden");
       }, 500);
     } else {
