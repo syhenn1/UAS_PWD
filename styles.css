@@ -129,6 +129,7 @@ body {
 }
 .video-dashboard img {
   width: 100%;
+  height: auto;
 }
 
 /* TEXT-CHANGING */
@@ -290,7 +291,8 @@ body {
 
 .item1A img, 
 .item2A img,
-.item3A img {
+.item3A img,.item4A img,.item5A img,.item6A img,.item7A img,.item8A img,.item9A img,
+.item10A img,.item11A img,.item12A img,.item13A img,.item14A {
   height: 450px;
   width : 600px;
   margin-left: 230px;
@@ -337,6 +339,7 @@ body {
 .konten {
   height: 100%;
   margin: 0px 240px;
+  margin-top: 50px;
   background-color: white;
   z-index: 100;
 }
