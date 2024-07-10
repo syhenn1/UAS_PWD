@@ -1,47 +1,12 @@
-// -------------------------OBJECT FILTER------------------------- //
-
-filterObjects("all");
-
-function filterObjects(c) {
-  var x, i;
-  x = document.getElementsByClassName("box");
-  if (c == "all") c = "";
-  for (i = 0; i < x.length; i++) {
-    removeClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
-  }
-}
-
-function addClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {
-      element.className += " " + arr2[i];
-    }
-  }
-}
-
-function removeClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
-    }
-  }
-  element.className = arr1.join(" ");
-}
+// -------------------------------TEXT-CHANGING------------------------------- //
 
 document.addEventListener("DOMContentLoaded", function () {
   const messages = [
-    "Home baked with Love! &lt;3",
-    "Freshly baked daily!",
-    "Taste the difference!",
-    "Baked with passion!",
-    "Enjoy our delicious treats!",
+    "Welcome back! We missed you!",
+    "Delighting you with fresh goodness!",
+    "Indulge in our delectable delights!",
+    "Crafted with care, just for you!",
+    "Savor the flavors of our artisanal treats!",
   ];
 
   let currentIndex = 0;
@@ -51,11 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (textElement) {
       const textContainer = document.querySelector(".text-changing");
       textContainer.classList.add("hidden");
-
       setTimeout(() => {
         textElement.innerHTML = messages[currentIndex];
         currentIndex = (currentIndex + 1) % messages.length;
-
         textContainer.classList.remove("hidden");
       }, 500);
     } else {
@@ -105,34 +68,33 @@ overlay.addEventListener("click", () => {
   });
 });
 
-// darken popup window di menu //
+// darken popup window di index //
 document.addEventListener("DOMContentLoaded", () => {
-    const items = document.querySelectorAll('.item1, .item2, .item3');
-  
-    items.forEach(item => {
-      item.addEventListener('mouseover', () => {
-        items.forEach(sibling => {
-          if (sibling !== item) {
-            sibling.classList.add('darken');
-          }
-        });
+  const items = document.querySelectorAll(".item1, .item2, .item3");
+
+  items.forEach((item) => {
+    item.addEventListener("mouseover", () => {
+      items.forEach((sibling) => {
+        if (sibling !== item) {
+          sibling.classList.add("darken");
+        }
       });
-  
-      item.addEventListener('mouseout', () => {
-        items.forEach(sibling => {
-          sibling.classList.remove('darken');
-        });
+    });
+
+    item.addEventListener("mouseout", () => {
+      items.forEach((sibling) => {
+        sibling.classList.remove("darken");
       });
     });
   });
-  
-  
-  window.addEventListener('scroll', function() {
-    var header = document.getElementById('header');
-    
-    if (window.scrollY < 100) {
-      header.classList.add('transparent');
-    } else {
-      header.classList.remove('transparent');
-    }
-  });
+});
+
+window.addEventListener("scroll", function () {
+  var header = document.getElementById("header");
+
+  if (window.scrollY < 100) {
+    header.classList.add("transparent");
+  } else {
+    header.classList.remove("transparent");
+  }
+});
