@@ -1,39 +1,27 @@
 // -------------------------------LOGIN------------------------------- //
-
 let username = document.getElementById("username");
 let password = document.getElementById("password");
 let failedAttempts = 0;
 
 function masuk() {
-  console.log(username);
   if (username.value.toLowerCase() == "admin" && password.value == "12345") {
     alert("Akun yang anda masukkan, benar!");
-    return (window.location.href = "admin.html");
-  } 
-  else if (username.value.toLowerCase() == "user" && password.value == "abcde") {
-    alert("Akun yang anda masukkan, benar!");
-    return (window.location.href = "user.html");
-  } 
-  else if (
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("username", "admin");
+    return (window.location.href = "index.html");
+  } else if (
     username.value.toLowerCase() != "admin" &&
-    username.value.toLowerCase() != "user" &&
     password.value == "12345"
   ) {
     alert("Username yang anda masukkan salah.");
-  } 
-  else if (
+  } else if (
     username.value.toLowerCase() != "admin" &&
-    username.value.toLowerCase() != "user" &&
-    password.value != "12345" &&
-    password.value != "abcde"
+    password.value != "12345"
   ) {
     alert("Username dan Password yang anda masukkan salah.");
-  }
-  else {
+  } else {
     if (
-      (username.value.toLowerCase() == "admin" &&
-        password.value != "12345") ||
-      (username.value.toLowerCase() == "user" && password.value != "abcde")
+      (username.value.toLowerCase() == "admin" && password.value != "12345")
     ) {
       failedAttempts++;
       if (failedAttempts >= 5) {
@@ -46,6 +34,49 @@ function masuk() {
   }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const loginButton = document.getElementById("loginButton");
+
+  if (isLoggedIn === "true") {
+      loginButton.innerHTML = '<img src="../ASSET-UAS/icons8-test-account-90.png" id="profileIcon" width="60px" alt="logologout">';
+      
+      loginButton.addEventListener('click', function(event) {
+          toggleDropdown();
+      });
+
+      function toggleDropdown() {
+          const dropdownContent = document.getElementById("dropdownContent");
+          dropdownContent.classList.toggle('show');
+      }
+
+      const logoutLink = document.createElement('a');
+      logoutLink.href = "logout";
+      logoutLink.textContent = "Logout";
+      logoutLink.addEventListener('click', function(event) {
+          event.preventDefault();
+          logout();
+      });
+      const dropdownContent = document.createElement('div');
+      dropdownContent.classList.add('dropdown-content');
+      dropdownContent.id = 'dropdownContent';
+      dropdownContent.appendChild(logoutLink);
+      loginButton.appendChild(dropdownContent);
+
+  } else {
+      loginButton.innerHTML = "<div class='loginbutton'>Login</div>";
+      loginButton.onclick = function () {
+      window.location.href = "login.html";
+      };
+  }
+});
+
+function logout() {
+  localStorage.removeItem("isLoggedIn");
+  localStorage.removeItem("username");
+  alert("Anda telah logout.");
+  window.location.href = "index.html";
+}
 
 // -------------------------------TEXT-CHANGING------------------------------- //
 
@@ -103,7 +134,7 @@ closeButtons.forEach((button) => {
     setTimeout(() => {
       popup.classList.remove("show", "hide");
       overlay.style.display = "none";
-    }, 500); 
+    }, 500);
   });
 });
 
@@ -113,7 +144,7 @@ overlay.addEventListener("click", () => {
     setTimeout(() => {
       popup.classList.remove("show", "hide");
       overlay.style.display = "none";
-    }, 500); 
+    }, 500);
   });
 });
 
@@ -138,7 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
 window.addEventListener('scroll', function() {
   var header = document.getElementById('header');
   
@@ -149,5 +179,39 @@ window.addEventListener('scroll', function() {
   }
 });
 
+// -------------------------OBJECT FILTER------------------------- //
 
+filterObjects("all");
 
+function filterObjects(c) {
+  var x, i;
+  x = document.getElementsByClassName("box");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    removeClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
+  }
+}
+
+function addClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+function removeClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
