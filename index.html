@@ -98,7 +98,32 @@
                                 <div class="item-name">Pastry Pizza</div>
                             </a></div>
                     </div>
-                    <div class="lihatlainnya"><a href="menu.html">Lihat menu lainnya!</a></div>
+                    <div>
+                        <div class="lihatlainnya">
+                            <a href="menu.html">Lihat menu lainnya!</a>
+                            <button class="button-purchase" data-popup="popup-prc">
+                                <div class="default-btn-prc">
+                                    <svg class="css-i6dzq1" stroke-linejoin="round" stroke-linecap="round" fill="none"
+                                        stroke-width="2" stroke="#FFF" height="20" width="20" viewBox="0 0 24 24">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle r="3" cy="12" cx="12"></circle>
+                                    </svg>
+                                    <span>PURCHASE?</span>
+                                </div>
+                                <div class="hover-btn-prc">
+                                    <svg class="css-i6dzq1" stroke-linejoin="round" stroke-linecap="round" fill="none"
+                                        stroke-width="2" stroke="#ffd300" height="20" width="20" viewBox="0 0 24 24">
+                                        <circle r="1" cy="21" cx="9"></circle>
+                                        <circle r="1" cy="21" cx="20"></circle>
+                                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6">
+                                        </path>
+                                    </svg>
+                                    <span>BUY NOW :D</span>
+                                </div>
+                            </button>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,6 +162,191 @@
                 rasa yang memikat dan tekstur yang menggugah selera. Dibuat dengan bahan-bahan berkualitas tinggi dan
                 dipanggang sempurna untuk menciptakan lapisan pastry yang garing di luar, namun lembut di dalamnya. </p>
         </div>
+
+        <div id="popup-prc" class="popup">
+            <button class="closePopup">&times;</button>
+            <div class="container-basket">
+                <div class="items-basket">
+                    <h2>Items</h2>
+                    <ul class="item-list-basket">
+                        <li class="item-basket" id="item1A">
+                            <img src="ASSET-UAS/[Feeds] rotinien-14.jpg" alt="Item 1A Image" class="item-image">
+                            <div class="item-info">
+                                Item 1 ROTI'O LEMPUYANGAN<br>
+                                Price: RP 10.000,00 <span class="price" id="price1A">(RP 10.000,00)</span> <br>
+                                <input type="number" id="item1AQuantity" class="quantity-input" value="1" min="1"
+                                    max="10">
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button"
+                                    onclick="addToBasket('Item 1A-basket', 'item1AQuantity', 'price1A')">Add to
+                                    Basket</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item2A">
+                            <img src="ASSET-UAS/FeedsInsta_Roti Goreng-05.jpg" alt="Item 2A Image" class="item-image">
+                            <div class="item-info">
+                                Item 2 ROTI'O LEMPUYANGAN<br>
+                                Price: RP 10.000,00 <span class="price" id="price2A">(RP 10.000,00)</span> <br>
+                                <input type="number" id="item2AQuantity" class="quantity-input" value="1" min="1"
+                                    max="10">
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button"
+                                    onclick="addToBasket('Item 2A-basket', 'item2AQuantity', 'price2A')">Add to
+                                    Basket</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item3A">
+                            <img src="ASSET-UAS/[Feeds] rotinien-18.jpg" alt="Item 3A Image" class="item-image">
+                            <div class="item-info">
+                                Item 3 ROTI'O LEMPUYANGAN<br>
+                                Price: RP 10.000,00 <span class="price" id="price3A">(RP 10.000,00)</span> <br>
+                                <input type="number" id="item3AQuantity" class="quantity-input" value="1" min="1" max="10"> 
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button" onclick="addToBasket('Item 3A-basket', 'item3AQuantity', 'price3A')">Add to Basket</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item4A">
+                            <img src="ASSET-UAS/Pastry Filling.jpeg" alt="Item 4A Image" class="item-image">
+                            <div class="item-info">
+                                Item 4 ROTI'O LEMPUYANGAN<br>
+                                Price: RP 10.000,00 <span class="price" id="price4A">(RP 10.000,00)</span> <br>
+                                <input type="number" id="item4AQuantity" class="quantity-input" value="1" min="1" max="10"> 
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button" onclick="addToBasket('Item 4A-basket', 'item4AQuantity', 'price4A')">Add to Basket</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item5A">
+                            <img src="item5A.jpg" alt="Item 5A Image" class="item-image">
+                            <div class="item-info">
+                                Item 5 ROTI'O LEMPUYANGAN<br>
+                                Price: RP 10.000,00 <span class="price" id="price5A">(RP 10.000,00)</span> <br>
+                                <input type="number" id="item5AQuantity" class="quantity-input" value="1" min="1" max="10"> 
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button" onclick="addToBasket('Item 5A-basket', 'item5AQuantity', 'price5A')">Add to Basket</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item6A">
+                            <img src="item6A.jpg" alt="Item 6A Image" class="item-image">
+                            <div class="item-info">
+                                Item 6 ROTI'O LEMPUYANGAN<br>
+                                Price: RP 10.000,00 <span class="price" id="price6A">(RP 10.000,00)</span> <br>
+                                <input type="number" id="item6AQuantity" class="quantity-input" value="1" min="1" max="10"> 
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button" onclick="addToBasket('Item 6A-basket', 'item6AQuantity', 'price6A')">Add to Basket</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item7A">
+                            <img src="item7A.jpg" alt="Item 7A Image" class="item-image">
+                            <div class="item-info">
+                                Item 7 ROTI'O LEMPUYANGAN<br>
+                                Price: RP 10.000,00 <span class="price" id="price7A">(RP 10.000,00)</span> <br>
+                                <input type="number" id="item7AQuantity" class="quantity-input" value="1" min="1" max="10"> 
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button" onclick="addToBasket('Item 7A-basket', 'item7AQuantity', 'price7A')">Add to Basket</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item8A">
+                            <img src="item8A.jpg" alt="Item 8A Image" class="item-image">
+                            <div class="item-info">
+                                Item 8 ROTI'O LEMPUYANGAN<br>
+                                Price: RP 10.000,00 <span class="price" id="price8A">(RP 10.000,00)</span> <br>
+                                <input type="number" id="item8AQuantity" class="quantity-input" value="1" min="1" max="10"> 
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button" onclick="addToBasket('Item 8A-basket', 'item8AQuantity', 'price8A')">Add to Basket</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item9A">
+                            <img src="item9A.jpg" alt="Item 9A Image" class="item-image">
+                            <div class="item-info">
+                                Item 9 ROTI'O LEMPUYANGAN<br>
+                                Price: RP 10.000,00 <span class="price" id="price9A">(RP 10.000,00)</span> <br>
+                                <input type="number" id="item9AQuantity" class="quantity-input" value="1" min="1" max="10"> 
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button" onclick="addToBasket('Item 9A-basket', 'item9AQuantity', 'price9A')">Add to Basket</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item10A">
+                            <img src="item10A.jpg" alt="Item 10A Image" class="item-image">
+                            <div class="item-info">
+                                Item 10 ROTI'O LEMPUYANGAN<br>
+                                Price: RP 10.000,00 <span class="price" id="price10A">(RP 10.000,00)</span> <br>
+                                <input type="number" id="item10AQuantity" class="quantity-input" value="1" min="1" max="10"> 
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button" onclick="addToBasket('Item 10A-basket', 'item10AQuantity', 'price10A')">Add to Basket</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item11A">
+                            <img src="item11A.jpg" alt="Item 11A Image" class="item-image">
+                            <div class="item-info">
+                                Item 11 ROTI'O LEMPUYANGAN<br>
+                                Price: RP 10.000,00 <span class="price" id="price11A">(RP 10.000,00)</span> <br>
+                                <input type="number" id="item11AQuantity" class="quantity-input" value="1" min="1" max="10"> 
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button" onclick="addToBasket('Item 11A-basket', 'item11AQuantity', 'price11A')">Add to Basket</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item12A">
+                            <img src="item12A.jpg" alt="Item 12A Image" class="item-image">
+                            <div class="item-info">
+                                Item 12 ROTI'O LEMPUYANGAN<br>
+                                Price: RP 10.000,00 <span class="price" id="price12A">(RP 10.000,00)</span> <br>
+                                <input type="number" id="item12AQuantity" class="quantity-input" value="1" min="1" max="10"> 
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button" onclick="addToBasket('Item 12A-basket', 'item12AQuantity', 'price12A')">Add to Basket</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item13A">
+                            <img src="item13A.jpg" alt="Item 13A Image" class="item-image">
+                            <div class="item-info">
+                                Item 13 ROTI'O LEMPUYANGAN<br>
+                                Price: RP 10.000,00 <span class="price" id="price13A">(RP 10.000,00)</span> <br>
+                                <input type="number" id="item13AQuantity" class="quantity-input" value="1" min="1" max="10"> 
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button" onclick="addToBasket('Item 13A-basket', 'item13AQuantity', 'price13A')">Add to Basket</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item14A">
+                            <img src="item14A.jpg" alt="Item 14A Image" class="item-image">
+                            <div class="item-info">
+                                Item 14 ROTI'O LEMPUYANGAN<br>
+                                Price: RP 10.000,00 <span class="price" id="price14A">(RP 10.000,00)</span> <br>
+                                <input type="number" id="item14AQuantity" class="quantity-input" value="1" min="1" max="10"> 
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button" onclick="addToBasket('Item 14A-basket', 'item14AQuantity', 'price14A')">Add to Basket</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="basket">
+                    <h2>Basket</h2>
+                    <ul id="basket-list"></ul>
+                    <div class="total-price" id="totalPrice">
+                        Total Price: $0.00
+                    </div>
+                    <div>
+                        <button class="remove-button" onclick="clearBasket()">Clear Basket</button>
+                        <button class="purchase-button" onclick="confirmPurchase()">Confirm Purchase</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
 
 
         <!-- PROMO -->

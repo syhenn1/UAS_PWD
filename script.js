@@ -6,22 +6,28 @@ let failedAttempts = 0;
 function masuk() {
   if (username.value.toLowerCase() == "admin" && password.value == "12345") {
     alert("Akun yang anda masukkan, benar!");
-    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("AdminisLoggedIn", "true");
     localStorage.setItem("username", "admin");
     return (window.location.href = "index.html");
+  } else if (username.value.toLowerCase() == "user" && password.value == "abcde") {
+    alert("Akun yang anda masukkan, benar!");
+    localStorage.setItem("UserisLoggedIn", "true");
+    localStorage.setItem("username", "user");
+    return (window.location.href = "index.html");
   } else if (
-    username.value.toLowerCase() != "admin" &&
-    password.value == "12345"
+    (username.value.toLowerCase() != "admin" && username.value.toLowerCase() != "user") &&
+    (password.value == "12345" || password.value == "abcde")
   ) {
     alert("Username yang anda masukkan salah.");
   } else if (
-    username.value.toLowerCase() != "admin" &&
-    password.value != "12345"
+    (username.value.toLowerCase() != "admin" && username.value.toLowerCase() != "user") &&
+    (password.value != "12345" && password.value != "abcde")
   ) {
     alert("Username dan Password yang anda masukkan salah.");
   } else {
     if (
-      (username.value.toLowerCase() == "admin" && password.value != "12345")
+      (username.value.toLowerCase() == "admin" && password.value != "12345") ||
+      (username.value.toLowerCase() == "user" && password.value != "abcde")
     ) {
       failedAttempts++;
       if (failedAttempts >= 5) {
@@ -34,60 +40,85 @@ function masuk() {
   }
 }
 
+// -------------------------------ADMIN DAN USER------------------------------- //
+
 document.addEventListener("DOMContentLoaded", function () {
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const AdminisLoggedIn = localStorage.getItem("AdminisLoggedIn");
+  const UserisLoggedIn = localStorage.getItem("UserisLoggedIn");
   const loginButton = document.getElementById("loginButton");
+  let messages = [];
 
-  if (isLoggedIn === "true") {
-      loginButton.innerHTML = '<img src="../ASSET-UAS/icons8-test-account-90.png" id="profileIcon" width="60px" alt="logologout">';
-      
-      loginButton.addEventListener('click', function(event) {
-          toggleDropdown();
-      });
 
-      function toggleDropdown() {
-          const dropdownContent = document.getElementById("dropdownContent");
-          dropdownContent.classList.toggle('show');
-      }
+  // -------------------------------ADMIN------------------------------- //
+  if (AdminisLoggedIn === "true") {
+    loginButton.innerHTML = '<img src="../ASSET-UAS/admintest.png" id="profileIcon" width="60px" alt="logologout">';
+    messages = ["Welcome back, Admin!", "You have new notifications.", "Check the admin panel.", "New user registrations."];
+    
+    loginButton.addEventListener('click', function() {
+      toggleDropdown();
+    });
 
-      const logoutLink = document.createElement('a');
-      logoutLink.href = "logout";
-      logoutLink.textContent = "Logout";
-      logoutLink.addEventListener('click', function(event) {
-          event.preventDefault();
-          logout();
-      });
-      const dropdownContent = document.createElement('div');
-      dropdownContent.classList.add('dropdown-content');
-      dropdownContent.id = 'dropdownContent';
-      dropdownContent.appendChild(logoutLink);
-      loginButton.appendChild(dropdownContent);
+    function toggleDropdown() {
+      const dropdownContent = document.getElementById("dropdownContent");
+      dropdownContent.classList.toggle('show');
+    }
 
-  } else {
-      loginButton.innerHTML = "<div class='loginbutton'>Login</div>";
-      loginButton.onclick = function () {
+    const logoutLink = document.createElement('a');
+    logoutLink.href = "logout";
+    logoutLink.textContent = "Logout";
+    logoutLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      logout();
+    });
+    const dropdownContent = document.createElement('div');
+    dropdownContent.classList.add('dropdown-content');
+    dropdownContent.id = 'dropdownContent';
+    dropdownContent.appendChild(logoutLink);
+    loginButton.appendChild(dropdownContent);
+  } 
+
+  // -------------------------------USER------------------------------- //
+  else if (UserisLoggedIn === "true") {
+    loginButton.innerHTML = '<img src="../ASSET-UAS/icons8-test-account-90.png" id="profileIcon" width="60px" alt="logologout">';
+    messages = ["Welcome back!", "We missed you!", "Enjoy our delicious treats!", "Hope you have a great day!"];
+    
+    loginButton.addEventListener('click', function() {
+      toggleDropdown();
+    });
+
+    function toggleDropdown() {
+      const dropdownContent = document.getElementById("dropdownContent");
+      dropdownContent.classList.toggle('show');
+    }
+
+    const logoutLink = document.createElement('a');
+    logoutLink.href = "logout";
+    logoutLink.textContent = "Logout";
+    logoutLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      logout();
+    });
+    const dropdownContent = document.createElement('div');
+    dropdownContent.classList.add('dropdown-content');
+    dropdownContent.id = 'dropdownContent';
+    dropdownContent.appendChild(logoutLink);
+    loginButton.appendChild(dropdownContent);
+  } 
+  
+  // -------------------------------KALO LOGOUT------------------------------- //
+  else {
+    loginButton.innerHTML = "<div class='loginbutton'>Login</div>";
+    loginButton.onclick = function () {
       window.location.href = "login.html";
-      };
+    };
+    messages = [
+      "Home baked with Love! &lt;3",
+      "Freshly baked daily!",
+      "Taste the difference!",
+      "Baked with passion!",
+      "Enjoy our delicious treats!",
+    ];
   }
-});
-
-function logout() {
-  localStorage.removeItem("isLoggedIn");
-  localStorage.removeItem("username");
-  alert("Anda telah logout.");
-  window.location.href = "index.html";
-}
-
-// -------------------------------TEXT-CHANGING------------------------------- //
-
-document.addEventListener("DOMContentLoaded", function () {
-  const messages = [
-    "Home baked with Love! &lt;3",
-    "Freshly baked daily!",
-    "Taste the difference!",
-    "Baked with passion!",
-    "Enjoy our delicious treats!",
-  ];
 
   let currentIndex = 0;
 
@@ -107,13 +138,20 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   changeText();
-
   setInterval(changeText, 5000);
 });
 
+function logout() {
+  localStorage.removeItem("AdminisLoggedIn");
+  localStorage.removeItem("UserisLoggedIn");
+  localStorage.removeItem("username");
+  alert("Anda telah logout.");
+  window.location.href = "index.html";
+}
+
 // -------------------------------POP-UP WINDOW MENU------------------------------- //
 
-const popupButtons = document.querySelectorAll(".popupButton");
+const popupButtons = document.querySelectorAll(".popupButton, .button-purchase");
 const overlay = document.getElementById("overlay");
 
 popupButtons.forEach((button) => {
@@ -215,3 +253,51 @@ function removeClass(element, name) {
   }
   element.className = arr1.join(" ");
 }
+
+
+// -------------------------BASKET SYSTEM------------------------- //
+
+var totalPrice = 0.00;
+
+        
+        function addToBasket(itemName, quantityInputId, priceSpanId) {
+            var quantity = parseInt(document.getElementById(quantityInputId).value);
+            var price = parseFloat(document.getElementById(priceSpanId).textContent.replace('(RP ', '').replace(')', '').replace('.', '').replace('.', ''));
+            var itemTotalPrice = quantity * price;
+
+            var basketList = document.getElementById('basket-list');
+            
+            
+            var listItem = document.createElement('li');
+            listItem.textContent = `${itemName} x ${quantity} (RP ${itemTotalPrice.toFixed(2)})`;
+            basketList.appendChild(listItem);
+            
+            
+            totalPrice += itemTotalPrice;
+            document.getElementById('totalPrice').textContent = `Total Price: RP ${totalPrice.toFixed(2)}`;
+        }
+
+        
+        function clearBasket() {
+            var basketList = document.getElementById('basket-list');
+            basketList.innerHTML = '';
+            totalPrice = 0.00;
+            document.getElementById('totalPrice').textContent = `Total Price: RP ${totalPrice.toFixed(2)}`;
+        }
+
+
+        function confirmPurchase() {
+            var basketList = document.getElementById('basket-list');
+            var items = basketList.getElementsByTagName('li');
+            if (items.length > 0) {
+                var confirmationMessage = "You have purchased:\n";
+                for (var i = 0; i < items.length; i++) {
+                    confirmationMessage += "- " + items[i].textContent + "\n";
+                }
+                confirmationMessage += "\nTotal Price: RP " + totalPrice.toFixed(2);
+                alert(confirmationMessage);
+                clearBasket();
+            } else {
+                alert("Your basket is empty. Please add items to make a purchase.");
+            }
+        }
