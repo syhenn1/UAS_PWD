@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rotinien</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <!-- DASHBOARD AWAL -->
     <header class="navbar" id="header">
         <div class="logo-container">
             <a href="index.html">Rotinien</a>
         </div>
         <div class="menu">
-            <a href="aboutus">About Us</a>
+            <a href="about.html">About Us</a>
             <a href="menu.html">Menu</a>
-            <a href="promo.html">Promo</a>
+            <a href="#promo">Promo</a>
         </div>
         <div class="login">
             <a href="#" id="loginButton">
@@ -28,9 +31,9 @@
     </div>
 
     <div class="opening" style="margin-top: -200px;">
-        <h1>About Rotinien</h1>
-        <h3>Mari kita ketahui tentang rotinien, sejarah dari perusahan keluarga!</h3>
-        <a href="#aboutus" class="ketahui">Baca Selengkapnya</a>
+        <h1>Promo Rotinien</h1>
+        <h3>Nikmati potongan harga hingga 20% tanpa batasan!</h3>
+        <a href="#promo" class="ketahui">Baca Selengkapnya</a>
     </div>
 
     <!-- TEXT-CHANGING -->
@@ -39,26 +42,57 @@
             <span>Home baked with Love! &lt;3</span>
         </div>
     </div>
-    <div class="about-konten" id="aboutus">
-        <div class="header">
-            <hr class="short-hr">
-            <h2>About Us</h2>            
+        <div class="konten" id="promo">
+            <div class="header">
+                <hr class="short-hr">
+                <h2>Promo Menarik</h2>
+            </div>
+            <div class="menu-index">
+                <div class="item1"><a href="#" class="popupButton" data-popup="popup1">
+                        <img src="../ASSET-UAS/pngtree-dancing-stars-happy-new-year-holiday-background-with-painting-fireworks-image_13943160.jpg" alt="Roti Gandum">
+                        <div class="item-name">Promo Tahun Baru!</div>
+                    </a></div>
+                <div class="item2"><a href="#" class="popupButton" data-popup="popup2">
+                        <img src="../ASSET-UAS/eventbg.jpg" alt="Roti Gandum Cokelat">
+                        <div class="item-name">Promo Bulan Ramadhan!</div>
+                    </a></div>
+                <div class="item3"><a href="#" class="popupButton" data-popup="popup3">
+                        <img src="../ASSET-UAS/abu-dhabi-600875_1920-1920x1313.jpg" alt="Pastry Pizza">
+                        <div class="item-name">Jumat Berkah!</div>
+                    </a></div>
+            </div>
+            <div id="popup1" class="popup">
+                <div class="item1A">
+                    <img src="../ASSET-UAS/pngtree-dancing-stars-happy-new-year-holiday-background-with-painting-fireworks-image_13943160.jpg" alt="Roti Goreng">
+                </div>
+                <button class="closePopup">&times;</button>
+                <h1>Promo Tahun Baru</h1>
+                <p>Nikmati promo Tahun Baru dengan potongan harga 20% menggunakan kode 789789! Dapatkan produk favorit Anda dengan harga terjangkau, mulai dari fashion hingga elektronik. Masukkan kode 789789 saat checkout. Promo terbatas, jangan sampai terlewatkan. Selamat Tahun Baru dan selamat berbelanja! </p>
+            </div>
+            <div id="popup2" class="popup">
+                <div class="item2A">
+                    <img src="../ASSET-UAS/eventbg.jpg" alt="Roti Gandum">
+                </div>
+                <button class="closePopup">&times;</button>
+                <h1>Promo Ramadhan</h1>
+                <p>Nikmati promo Ramadhan dengan potongan harga 15% menggunakan kode 456456! Dapatkan produk favorit Anda dengan harga terjangkau, mulai dari fashion hingga elektronik. Masukkan kode 456456 saat checkout. Promo terbatas, jangan sampai terlewatkan. Selamat berbelanja dan selamat menyambut Ramadhan! </p>
+            </div>
+            <div id="popup3" class="popup">
+                <div class="item3A">
+                    <img src="../ASSET-UAS/abu-dhabi-600875_1920-1920x1313.jpg" alt="Pastry Pizza">
+                </div>
+                <button class="closePopup">&times;</button>
+                <h1>Jumat Berkah</h1>
+                <p>Nikmati promo Jumat Berkah dengan potongan harga 10% menggunakan kode 123123! Dapatkan produk favorit Anda dengan harga terjangkau, mulai dari fashion hingga elektronik. Masukkan kode 123123 saat checkout. Promo terbatas, jangan sampai terlewatkan. Selamat berbelanja dan selamat menikmati Jumat Berkah!</p>
+            </div>
+    
         </div>
-        <div class="about-konten-isi">
-            <img src="../ASSET-UAS/Dapur Bu Muchlis-04.jpg" alt="logodapur">
-            <p>Rotinien adalah perusahaan keluarga yang bergerak di bidang bakery, didirikan pada tahun 2017 oleh keluarga Wahyudi. 
-                Terletak di dalam sebuah komplek, Rotinien awalnya hanya sebuah usaha kecil-kecilan yang melayani tetangga dan teman-teman dekat. 
-                Dengan resep turun-temurun yang diwariskan dari generasi ke generasi, Rotinien fokus pada kualitas dan rasa yang otentik, yang menjadi ciri khasnya. 
-                Dedikasi keluarga Wahyudi terhadap bisnis ini tercermin dalam setiap produk yang mereka buat, yang selalu mengutamakan bahan-bahan berkualitas tinggi dan teknik pembuatan roti tradisional.</p>
-        </div>
-        <hr class="pembatas">
-        <div class="about-konten-isi">
-            <p>Dalam kurun waktu beberapa tahun, Rotinien mengalami pertumbuhan yang signifikan. Pada tahun 2018, Rotinien berhasil memperluas jangkauan pasarnya dengan membuka gerai pertama di luar komplek, menarik lebih banyak pelanggan dari berbagai wilayah. 
-                Tahun 2019, perusahaan ini mulai memperkenalkan berbagai produk baru, seperti roti manis, kue, dan pastry, yang semuanya mendapat sambutan hangat dari konsumen. 
-                Kemudian pada tahun 2020, Rotinien meraih penghargaan sebagai salah satu bakery terbaik di kota mereka, yang semakin mengukuhkan reputasi mereka di industri ini.</p>
-            <p>Meskipun dihadapkan pada tantangan pandemi COVID-19 pada tahun 2020, Rotinien terus berinovasi dengan memperkenalkan layanan pemesanan online dan pengiriman, sehingga tetap dapat melayani pelanggannya dengan aman. Pada tahun 2021, mereka memperkenalkan konsep toko roti berbasis kafe di komplek, yang menjadi tempat favorit bagi masyarakat untuk bersantai sambil menikmati roti dan kopi. Hingga saat ini, Rotinien terus berkembang dengan mengutamakan kualitas dan kepuasan pelanggan, menjadikannya sebagai salah satu bakery keluarga yang paling dihormati di kota tersebut.</p>
-        </div>
-    </div>
+
+        <div class="orange-line"></div>
+
+    </content>
+
+    <!-- FOOTER -->
     <footer>
         <div id="footer">
             <!-- LOGO -->
@@ -122,6 +156,10 @@
             </div>
         </div>
     </footer>
+
+
     <script src="script.js"></script>
 </body>
+
+
 </html>

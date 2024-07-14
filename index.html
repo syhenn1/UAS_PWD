@@ -338,6 +338,11 @@
                         Total Price: $0.00
                     </div>
                     <div>
+                        <label for="voucherCode">Masukkan Kode Voucher:</label>
+                        <input type="text" id="voucherCode" />
+                        <button onclick="applyVoucher()">Terapkan Voucher</button>
+                    </div>
+                    <div>
                         <button class="remove-button" onclick="clearBasket()">Clear Basket</button>
                         <button class="purchase-button" onclick="confirmPurchase()">Confirm Purchase</button>
                     </div>
@@ -365,16 +370,10 @@
                     <div class="item-name">Promo Ramadhan</div>
                 </a>
             </div>
-            <div class="lihatlainnya"><a href="#">Lihat promo lainnya!</a></div>
+            <div class="lihatlainnya"><a href="promo.html">Lihat promo lainnya!</a></div>
         </div>
 
         <div class="orange-line"></div>
-
-        <div class="MAP">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d3965.5573567610563!2d106.9705362!3d-6.3217222!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTknMTguMiJTIDEwNsKwNTgnMjMuMiJF!5e0!3m2!1sen!2sid!4v1720663418214!5m2!1sen!2sid"
-                frameborder="" allowfullscreen="allowfullscreen" style="width: 100%; height: 400px;"></iframe>
-        </div>
 
     </content>
 
@@ -383,14 +382,21 @@
         <div id="footer">
             <!-- LOGO -->
             <div class="footer-container">
-                <img src="../ASSET-UAS/logo-rotinien.png" alt="Footer Logo" class="footer-logo">
+                <img src="../ASSET-UAS/logo-rotinien.png" width="120px" alt="Footer Logo" style="margin-left: 50px;">
+                <div class="whatsapp">
+                    <img src="../ASSET-UAS/whatsapp-512.png" width="25px" height="25px" alt="logo-whatsapp">
+                    <p>62+ 813-9999-0000</p>
+                </div>
             </div>
 
             <!-- GARIS -->
             <div
-                style="border-left: 2px solid rgb(255, 255, 255); height: 100px; margin-top: 20px; margin-left: 120px;">
+                style="border-left: 2px solid rgb(255, 255, 255); height: 100px; margin-top: 20px; margin-left: -30px;">
             </div>
-
+            <iframe class="MAP"
+                src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d3965.5573567610563!2d106.9705362!3d-6.3217222!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTknMTguMiJTIDEwNsKwNTgnMjMuMiJF!5e0!3m2!1sen!2sid!4v1720663418214!5m2!1sen!2sid"
+                frameborder="" allowfullscreen="allowfullscreen" style="width: 100%; height: 150px;">
+            </iframe>
             <!-- BUTTON  -->
             <div class="social-buttons">
                 <a href="#" class="social-button twitter">

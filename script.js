@@ -258,46 +258,70 @@ function removeClass(element, name) {
 // -------------------------BASKET SYSTEM------------------------- //
 
 var totalPrice = 0.00;
+var discount = 0.00;
+var voucherCodes = {
+    "123123": 0.10,  // 10% diskon
+    "456456": 0.15,  // 15% diskon
+    "789789": 0.20   // 20% diskon
+};
 
-        
-        function addToBasket(itemName, quantityInputId, priceSpanId) {
-            var quantity = parseInt(document.getElementById(quantityInputId).value);
-            var price = parseFloat(document.getElementById(priceSpanId).textContent.replace('(RP ', '').replace(')', '').replace('.', '').replace('.', ''));
-            var itemTotalPrice = quantity * price;
+function addToBasket(itemName, quantityInputId, priceSpanId) {
+    const AdminisLoggedIn = localStorage.getItem("AdminisLoggedIn");
+    const UserisLoggedIn = localStorage.getItem("UserisLoggedIn");
+    if (AdminisLoggedIn === "true" || UserisLoggedIn === "true") {
+        var quantity = parseInt(document.getElementById(quantityInputId).value);
+        var price = parseFloat(document.getElementById(priceSpanId).textContent.replace('(RP ', '').replace(')', '').replace('.', '').replace('.', ''));
+        var itemTotalPrice = quantity * price;
+        var basketList = document.getElementById('basket-list');
+        var listItem = document.createElement('li');
+        listItem.textContent = `${itemName} x ${quantity} (RP ${itemTotalPrice.toFixed(2)})`;
+        basketList.appendChild(listItem);
+        totalPrice += itemTotalPrice;
+        updateTotalPrice();
+    } else {
+        alert("Tolong Login Terlebih Dahulu.");
+        return (window.location.href = "login.html");
+    }
+}
 
-            var basketList = document.getElementById('basket-list');
-            
-            
-            var listItem = document.createElement('li');
-            listItem.textContent = `${itemName} x ${quantity} (RP ${itemTotalPrice.toFixed(2)})`;
-            basketList.appendChild(listItem);
-            
-            
-            totalPrice += itemTotalPrice;
-            document.getElementById('totalPrice').textContent = `Total Price: RP ${totalPrice.toFixed(2)}`;
+function clearBasket() {
+    var basketList = document.getElementById('basket-list');
+    basketList.innerHTML = '';
+    totalPrice = 0.00;
+    discount = 0.00;
+    updateTotalPrice();
+}
+
+function updateTotalPrice() {
+    var discountedPrice = totalPrice - discount;
+    document.getElementById('totalPrice').textContent = `Total Harga: RP ${discountedPrice.toFixed(2)}`;
+}
+
+function applyVoucher() {
+    var voucherCode = document.getElementById('voucherCode').value;
+    if (voucherCodes.hasOwnProperty(voucherCode)) {
+        discount = totalPrice * voucherCodes[voucherCode];
+        alert(`Kode voucher diterapkan. Anda mendapat diskon RP ${discount.toFixed(2)}`);
+    } else {
+        discount = 0.00;
+        alert("Kode voucher tidak valid.");
+    }
+    updateTotalPrice();
+}
+
+function confirmPurchase() {
+    var basketList = document.getElementById('basket-list');
+    var items = basketList.getElementsByTagName('li');
+    if (items.length > 0) {
+        var confirmationMessage = "Anda telah membeli:\n";
+        for (var i = 0; i < items.length; i++) {
+            confirmationMessage += "- " + items[i].textContent + "\n";
         }
-
-        
-        function clearBasket() {
-            var basketList = document.getElementById('basket-list');
-            basketList.innerHTML = '';
-            totalPrice = 0.00;
-            document.getElementById('totalPrice').textContent = `Total Price: RP ${totalPrice.toFixed(2)}`;
-        }
-
-
-        function confirmPurchase() {
-            var basketList = document.getElementById('basket-list');
-            var items = basketList.getElementsByTagName('li');
-            if (items.length > 0) {
-                var confirmationMessage = "You have purchased:\n";
-                for (var i = 0; i < items.length; i++) {
-                    confirmationMessage += "- " + items[i].textContent + "\n";
-                }
-                confirmationMessage += "\nTotal Price: RP " + totalPrice.toFixed(2);
-                alert(confirmationMessage);
-                clearBasket();
-            } else {
-                alert("Your basket is empty. Please add items to make a purchase.");
-            }
-        }
+        var finalPrice = totalPrice - discount;
+        confirmationMessage += "\nTotal Harga: RP " + finalPrice.toFixed(2);
+        alert(confirmationMessage);
+        clearBasket();
+    } else {
+        alert("Keranjang belanja Anda kosong. Silakan tambahkan barang untuk melakukan pembelian.");
+    }
+}
