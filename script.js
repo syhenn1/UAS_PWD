@@ -9,19 +9,25 @@ function masuk() {
     localStorage.setItem("AdminisLoggedIn", "true");
     localStorage.setItem("username", "admin");
     return (window.location.href = "index.html");
-  } else if (username.value.toLowerCase() == "user" && password.value == "abcde") {
+  } else if (
+    username.value.toLowerCase() == "user" &&
+    password.value == "abcde"
+  ) {
     alert("Akun yang anda masukkan, benar!");
     localStorage.setItem("UserisLoggedIn", "true");
     localStorage.setItem("username", "user");
     return (window.location.href = "index.html");
   } else if (
-    (username.value.toLowerCase() != "admin" && username.value.toLowerCase() != "user") &&
+    username.value.toLowerCase() != "admin" &&
+    username.value.toLowerCase() != "user" &&
     (password.value == "12345" || password.value == "abcde")
   ) {
     alert("Username yang anda masukkan salah.");
   } else if (
-    (username.value.toLowerCase() != "admin" && username.value.toLowerCase() != "user") &&
-    (password.value != "12345" && password.value != "abcde")
+    username.value.toLowerCase() != "admin" &&
+    username.value.toLowerCase() != "user" &&
+    password.value != "12345" &&
+    password.value != "abcde"
   ) {
     alert("Username dan Password yang anda masukkan salah.");
   } else {
@@ -48,63 +54,74 @@ document.addEventListener("DOMContentLoaded", function () {
   const loginButton = document.getElementById("loginButton");
   let messages = [];
 
-
   // -------------------------------ADMIN------------------------------- //
   if (AdminisLoggedIn === "true") {
-    loginButton.innerHTML = '<img src="../ASSET-UAS/admintest.png" id="profileIcon" width="60px" alt="logologout">';
-    messages = ["Welcome back, Admin!", "You have new notifications.", "Check the admin panel.", "New user registrations."];
-    
-    loginButton.addEventListener('click', function() {
+    loginButton.innerHTML =
+      '<img src="../ASSET-UAS/admintest.png" id="profileIcon" width="60px" alt="logologout">';
+    messages = [
+      "Welcome back, Admin!",
+      "You have new notifications.",
+      "Check the admin panel.",
+      "New user registrations.",
+    ];
+
+    loginButton.addEventListener("click", function () {
       toggleDropdown();
     });
 
     function toggleDropdown() {
       const dropdownContent = document.getElementById("dropdownContent");
-      dropdownContent.classList.toggle('show');
+      dropdownContent.classList.toggle("show");
     }
 
-    const logoutLink = document.createElement('a');
+    const logoutLink = document.createElement("a");
     logoutLink.href = "logout";
     logoutLink.textContent = "Logout";
-    logoutLink.addEventListener('click', function(event) {
+    logoutLink.addEventListener("click", function (event) {
       event.preventDefault();
       logout();
     });
-    const dropdownContent = document.createElement('div');
-    dropdownContent.classList.add('dropdown-content');
-    dropdownContent.id = 'dropdownContent';
+    const dropdownContent = document.createElement("div");
+    dropdownContent.classList.add("dropdown-content");
+    dropdownContent.id = "dropdownContent";
     dropdownContent.appendChild(logoutLink);
     loginButton.appendChild(dropdownContent);
-  } 
+  }
 
   // -------------------------------USER------------------------------- //
   else if (UserisLoggedIn === "true") {
-    loginButton.innerHTML = '<img src="../ASSET-UAS/icons8-test-account-90.png" id="profileIcon" width="60px" alt="logologout">';
-    messages = ["Welcome back!", "We missed you!", "Enjoy our delicious treats!", "Hope you have a great day!"];
-    
-    loginButton.addEventListener('click', function() {
+    loginButton.innerHTML =
+      '<img src="../ASSET-UAS/icons8-test-account-90.png" id="profileIcon" width="60px" alt="logologout">';
+    messages = [
+      "Welcome back!",
+      "We missed you!",
+      "Enjoy our delicious treats!",
+      "Hope you have a great day!",
+    ];
+
+    loginButton.addEventListener("click", function () {
       toggleDropdown();
     });
 
     function toggleDropdown() {
       const dropdownContent = document.getElementById("dropdownContent");
-      dropdownContent.classList.toggle('show');
+      dropdownContent.classList.toggle("show");
     }
 
-    const logoutLink = document.createElement('a');
+    const logoutLink = document.createElement("a");
     logoutLink.href = "logout";
     logoutLink.textContent = "Logout";
-    logoutLink.addEventListener('click', function(event) {
+    logoutLink.addEventListener("click", function (event) {
       event.preventDefault();
       logout();
     });
-    const dropdownContent = document.createElement('div');
-    dropdownContent.classList.add('dropdown-content');
-    dropdownContent.id = 'dropdownContent';
+    const dropdownContent = document.createElement("div");
+    dropdownContent.classList.add("dropdown-content");
+    dropdownContent.id = "dropdownContent";
     dropdownContent.appendChild(logoutLink);
     loginButton.appendChild(dropdownContent);
-  } 
-  
+  }
+
   // -------------------------------KALO LOGOUT------------------------------- //
   else {
     loginButton.innerHTML = "<div class='loginbutton'>Login</div>";
@@ -151,7 +168,7 @@ function logout() {
 
 // -------------------------------POP-UP WINDOW MENU------------------------------- //
 
-const popupButtons = document.querySelectorAll(".popupButton, .button-purchase");
+const popupButtons = document.querySelectorAll(".popupButton, .button-purchase, .buy-now");
 const overlay = document.getElementById("overlay");
 
 popupButtons.forEach((button) => {
@@ -165,9 +182,10 @@ popupButtons.forEach((button) => {
 });
 
 const closeButtons = document.querySelectorAll(".closePopup");
+
 closeButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const popup = button.parentElement;
+    const popup = button.closest(".popup");
     popup.classList.add("hide");
     setTimeout(() => {
       popup.classList.remove("show", "hide");
@@ -188,32 +206,32 @@ overlay.addEventListener("click", () => {
 
 // darken popup window di index //
 document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll('.item1, .item2, .item3');
+  const items = document.querySelectorAll(".item1, .item2, .item3");
 
-  items.forEach(item => {
-    item.addEventListener('mouseover', () => {
-      items.forEach(sibling => {
+  items.forEach((item) => {
+    item.addEventListener("mouseover", () => {
+      items.forEach((sibling) => {
         if (sibling !== item) {
-          sibling.classList.add('darken');
+          sibling.classList.add("darken");
         }
       });
     });
 
-    item.addEventListener('mouseout', () => {
-      items.forEach(sibling => {
-        sibling.classList.remove('darken');
+    item.addEventListener("mouseout", () => {
+      items.forEach((sibling) => {
+        sibling.classList.remove("darken");
       });
     });
   });
 });
 
-window.addEventListener('scroll', function() {
-  var header = document.getElementById('header');
-  
+window.addEventListener("scroll", function () {
+  var header = document.getElementById("header");
+
   if (window.scrollY < 100) {
-    header.classList.add('transparent');
+    header.classList.add("transparent");
   } else {
-    header.classList.remove('transparent');
+    header.classList.remove("transparent");
   }
 });
 
@@ -254,74 +272,162 @@ function removeClass(element, name) {
   element.className = arr1.join(" ");
 }
 
-
 // -------------------------BASKET SYSTEM------------------------- //
 
-var totalPrice = 0.00;
-var discount = 0.00;
+document.addEventListener("DOMContentLoaded", function () {
+  const AdminisLoggedIn = localStorage.getItem("AdminisLoggedIn");
+  const UserisLoggedIn = localStorage.getItem("UserisLoggedIn");
+
+  document.querySelectorAll(".price-input").forEach((input) => {
+    const storedPrice = localStorage.getItem(input.id);
+    if (storedPrice) {
+      input.value = storedPrice;
+    }
+  });
+
+  if (AdminisLoggedIn === "true") {
+    document
+      .querySelectorAll(".add-button")
+      .forEach((button) => (button.style.display = "none"));
+    document
+      .querySelectorAll(".change-price-button")
+      .forEach((button) => (button.style.display = "block"));
+    document
+      .querySelectorAll(".price-input")
+      .forEach((input) => input.setAttribute("readonly", true));
+    document
+      .querySelectorAll(".quantity-input")
+      .forEach((input) => input.setAttribute("readonly", true)); 
+  } else if (UserisLoggedIn === "true") {
+    document
+      .querySelectorAll(".change-price-button")
+      .forEach((button) => (button.style.display = "none"));
+    document
+      .querySelectorAll(".price-input")
+      .forEach((input) => input.setAttribute("readonly", true));
+  } else if (UserisLoggedIn != true || AdminisLoggedIn != true) {
+    document
+      .querySelectorAll(".change-price-button")
+      .forEach((button) => (button.style.display = "none"));
+  }
+});
+
+var totalPrice = 0.0;
+var discount = 0.0;
+
 var voucherCodes = {
-    "123123": 0.10,  // 10% diskon
-    "456456": 0.15,  // 15% diskon
-    "789789": 0.20   // 20% diskon
+  123123: 0.1,
+  456456: 0.15,
+  789789: 0.2,
 };
 
-function addToBasket(itemName, quantityInputId, priceSpanId) {
-    const AdminisLoggedIn = localStorage.getItem("AdminisLoggedIn");
-    const UserisLoggedIn = localStorage.getItem("UserisLoggedIn");
-    if (AdminisLoggedIn === "true" || UserisLoggedIn === "true") {
-        var quantity = parseInt(document.getElementById(quantityInputId).value);
-        var price = parseFloat(document.getElementById(priceSpanId).textContent.replace('(RP ', '').replace(')', '').replace('.', '').replace('.', ''));
-        var itemTotalPrice = quantity * price;
-        var basketList = document.getElementById('basket-list');
-        var listItem = document.createElement('li');
-        listItem.textContent = `${itemName} x ${quantity} (RP ${itemTotalPrice.toFixed(2)})`;
-        basketList.appendChild(listItem);
-        totalPrice += itemTotalPrice;
-        updateTotalPrice();
-    } else {
-        alert("Tolong Login Terlebih Dahulu.");
-        return (window.location.href = "login.html");
+function addToBasket(itemName, quantityInputId, priceInputId) {
+  const AdminisLoggedIn = localStorage.getItem("AdminisLoggedIn");
+  const UserisLoggedIn = localStorage.getItem("UserisLoggedIn");
+  if (UserisLoggedIn === "true") {
+    var quantity = parseInt(document.getElementById(quantityInputId).value);
+    var price = parseFloat(
+      document
+        .getElementById(priceInputId)
+        .value.replace(".", "")
+        .replace(",", ".")
+    );
+    var itemTotalPrice = quantity * price;
+    var basketList = document.getElementById("basket-list");
+    var listItem = document.createElement("li");
+    listItem.textContent = `${itemName} x ${quantity} (RP ${itemTotalPrice.toFixed(
+      2
+    )})`;
+    basketList.appendChild(listItem);
+    totalPrice += itemTotalPrice;
+    updateTotalPrice();
+  } else {
+    alert("Tolong Login Terlebih Dahulu.");
+  }
+}
+
+function changePrice(priceInputId) {
+  const AdminisLoggedIn = localStorage.getItem("AdminisLoggedIn");
+  if (AdminisLoggedIn === "true") {
+    var newPrice = prompt("Masukkan harga baru:");
+    if (newPrice !== null) {
+      newPrice = newPrice.replace(",", ".");
+      if (!isNaN(newPrice) && newPrice > 0) {
+        newPrice = parseFloat(newPrice).toFixed(2).replace(".", ",");
+        var confirmation = confirm(`Harga akan diubah menjadi RP ${newPrice}?`);
+        if (confirmation) {
+          document.getElementById(priceInputId).value = newPrice;
+          localStorage.setItem(priceInputId, newPrice); 
+        }
+      } else {
+        alert("Harga tidak valid. Silakan masukkan angka yang valid.");
+      }
     }
+  } else {
+    alert("Anda tidak memiliki izin untuk mengubah harga.");
+  }
 }
 
 function clearBasket() {
-    var basketList = document.getElementById('basket-list');
-    basketList.innerHTML = '';
-    totalPrice = 0.00;
-    discount = 0.00;
-    updateTotalPrice();
+  var basketList = document.getElementById("basket-list");
+  basketList.innerHTML = "";
+  totalPrice = 0.0;
+  discount = 0.0;
+  updateTotalPrice();
 }
 
 function updateTotalPrice() {
-    var discountedPrice = totalPrice - discount;
-    document.getElementById('totalPrice').textContent = `Total Harga: RP ${discountedPrice.toFixed(2)}`;
+  var discountedPrice = totalPrice - discount;
+  document.getElementById(
+    "totalPrice"
+  ).textContent = `Total Harga: RP ${discountedPrice.toFixed(2)}`;
 }
 
 function applyVoucher() {
-    var voucherCode = document.getElementById('voucherCode').value;
-    if (voucherCodes.hasOwnProperty(voucherCode)) {
-        discount = totalPrice * voucherCodes[voucherCode];
-        alert(`Kode voucher diterapkan. Anda mendapat diskon RP ${discount.toFixed(2)}`);
-    } else {
-        discount = 0.00;
-        alert("Kode voucher tidak valid.");
-    }
-    updateTotalPrice();
+  var voucherCode = document.getElementById("voucherCode").value;
+  if (voucherCodes.hasOwnProperty(voucherCode)) {
+    discount = totalPrice * voucherCodes[voucherCode];
+    alert(
+      `Kode voucher diterapkan. Anda mendapat diskon RP ${discount.toFixed(2)}`
+    );
+  } else {
+    discount = 0.0;
+    alert("Kode voucher tidak valid.");
+  }
+  updateTotalPrice();
 }
 
 function confirmPurchase() {
-    var basketList = document.getElementById('basket-list');
-    var items = basketList.getElementsByTagName('li');
+  const UserisLoggedIn = localStorage.getItem("UserisLoggedIn");
+  if (UserisLoggedIn === "true") {
+    var basketList = document.getElementById("basket-list");
+    var items = basketList.getElementsByTagName("li");
     if (items.length > 0) {
-        var confirmationMessage = "Anda telah membeli:\n";
-        for (var i = 0; i < items.length; i++) {
-            confirmationMessage += "- " + items[i].textContent + "\n";
-        }
-        var finalPrice = totalPrice - discount;
-        confirmationMessage += "\nTotal Harga: RP " + finalPrice.toFixed(2);
-        alert(confirmationMessage);
-        clearBasket();
+      var confirmationMessage = "Anda telah membeli:\n";
+      for (var i = 0; i < items.length; i++) {
+        confirmationMessage += "- " + items[i].textContent + "\n";
+      }
+      var finalPrice = totalPrice - discount;
+      confirmationMessage += "\nTotal Harga: RP " + finalPrice.toFixed(2);
+      alert(confirmationMessage);
+      clearBasket();
     } else {
-        alert("Keranjang belanja Anda kosong. Silakan tambahkan barang untuk melakukan pembelian.");
+      alert(
+        "Keranjang belanja Anda kosong. Silakan tambahkan barang untuk melakukan pembelian."
+      );
     }
+  } else {
+    alert("Tolong Login Terlebih Dahulu.");
+  }
 }
+
+
+
+// BUAT GANTI TULISAN DI PURCHASE // 
+document.addEventListener("DOMContentLoaded", function () {
+  const AdminisLoggedIn = localStorage.getItem("AdminisLoggedIn");
+  if (AdminisLoggedIn === "true") {
+    document.getElementById("defaultBtnText").textContent = "CHANGE PRICE";
+    document.getElementById("hoverBtnText").textContent = "CHANGE PRICE :D";
+  }
+});

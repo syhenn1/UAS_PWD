@@ -380,7 +380,6 @@ body {
   color: #ff7400;
 }
 
-
 .item1A img,
 .item2A img,
 .item3A img,
@@ -399,7 +398,6 @@ body {
   width: 600px;
   margin-left: 230px;
 }
-
 
 .overlay {
   display: none;
@@ -620,17 +618,38 @@ body {
 
 /* BASKET SYSTEM */
 
+.purchase-tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #ff7400;
+  font-weight: bold;
+  text-shadow: 0 0 1px #ff7400, 0 0 2px #ff7400;
+}
+
 .container-basket {
   display: flex;
   justify-content: space-between;
-  max-width: 800px;
+  max-width: 1440px;
 }
 .items-basket {
   flex: 1;
 }
+
+.items-basket h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  color: #f79749;
+  font-weight: bold;
+  text-shadow: 0 0 1px #f79749, 0 0 2px #f79749;
+}
 .basket {
   flex: 1;
-  margin-left: 20px;
+  margin-left: 200px;
 }
 .item-list-basket {
   list-style-type: none;
@@ -642,8 +661,8 @@ body {
   align-items: center;
 }
 .item-image {
-  width: 50px; 
-  height: 50px; 
+  width: 180px;
+  height: 180px;
   margin-right: 10px;
 }
 .item-info {
@@ -663,6 +682,20 @@ body {
 .action-buttons {
   margin-left: 10px;
 }
+.add-button {
+  background-color: #f4ae36;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+}
+.add-button:hover {
+  background-color: #ff7300;
+}
 .remove-button {
   background-color: #f44336;
   color: white;
@@ -678,7 +711,7 @@ body {
   background-color: #d32f2f;
 }
 .purchase-button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   padding: 6px 12px;
@@ -690,6 +723,23 @@ body {
 }
 .purchase-button:hover {
   background-color: #45a049;
+}
+.voucher-tab {
+  margin-top: 20px;
+}
+.voucher-button {
+  background-color: #ff8800;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+}
+.voucher-button:hover {
+  background-color: #ffaf2f;
 }
 .total-price {
   margin-top: 10px;
@@ -708,7 +758,7 @@ body {
   margin-top: 10px;
 }
 
-.whatsapp{
+.whatsapp {
   display: flex;
   justify-content: start;
   gap: 10px;
@@ -1091,6 +1141,6 @@ body {
   -o-transition: 0.3s;
 }
 
-.MAP{
-  margin:30px;
+.MAP {
+  margin: 30px;
 }
