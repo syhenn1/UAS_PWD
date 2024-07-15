@@ -12,9 +12,10 @@
             <a href="index.html">Rotinien</a>
         </div>
         <div class="menu">
-            <a href="aboutus">About Us</a>
+            <a href="#aboutus">About Us</a>
             <a href="menu.html">Menu</a>
             <a href="promo.html">Promo</a>
+            <a href="#" data-popup="popup-prc" class="buy-now">Buy Now</a>
         </div>
         <div class="login">
             <a href="#" id="loginButton">
@@ -57,6 +58,287 @@
                 Tahun 2019, perusahaan ini mulai memperkenalkan berbagai produk baru, seperti roti manis, kue, dan pastry, yang semuanya mendapat sambutan hangat dari konsumen. 
                 Kemudian pada tahun 2020, Rotinien meraih penghargaan sebagai salah satu bakery terbaik di kota mereka, yang semakin mengukuhkan reputasi mereka di industri ini.</p>
             <p>Meskipun dihadapkan pada tantangan pandemi COVID-19 pada tahun 2020, Rotinien terus berinovasi dengan memperkenalkan layanan pemesanan online dan pengiriman, sehingga tetap dapat melayani pelanggannya dengan aman. Pada tahun 2021, mereka memperkenalkan konsep toko roti berbasis kafe di komplek, yang menjadi tempat favorit bagi masyarakat untuk bersantai sambil menikmati roti dan kopi. Hingga saat ini, Rotinien terus berkembang dengan mengutamakan kualitas dan kepuasan pelanggan, menjadikannya sebagai salah satu bakery keluarga yang paling dihormati di kota tersebut.</p>
+        </div>
+    </div>
+    <div id="popup-prc" class="popup">
+        <div class="purchase-tab">
+            <p12>PURCHASE</p12>
+        </div>
+        <div class="items-basket">
+            <button class="closePopup">&times;</button>
+            <div class="container-basket">
+                <div class="items-basket">
+                    <h2>Items</h2>
+                    <ul class="item-list-basket">
+                        <li class="item-basket" id="item1A">
+                            <img src="ASSET-UAS/[Feeds] rotinien-14.jpg" alt="Item 1A Image" class="item-image">
+                            <div class="item-info">
+                                Bolu Lemon<br>
+                                Price: RP <input type="text" id="price1A" class="price-input" value="10.000,00"
+                                    readonly> <br>
+                                <input type="number" id="item1AQuantity" class="quantity-input" value="1" min="1"
+                                    max="10">
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button"
+                                    onclick="addToBasket('Bolu Lemon', 'item1AQuantity', 'price1A')">Add to
+                                    Basket</button>
+                                <button class="change-price-button" onclick="changePrice('price1A')">Change
+                                    Price</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item2A">
+                            <img src="ASSET-UAS/FeedsInsta_Roti Goreng-05.jpg" alt="Item 2A Image"
+                                class="item-image">
+                            <div class="item-info">
+                                Bolu Marmer<br>
+                                Price: RP <input type="text" id="price2A" class="price-input" value="10.000,00"
+                                    readonly> <br>
+                                <input type="number" id="item2AQuantity" class="quantity-input" value="1" min="1"
+                                    max="10">
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button"
+                                    onclick="addToBasket('Bolu Marmer', 'item2AQuantity', 'price2A')">Add to
+                                    Basket</button>
+                                <button class="change-price-button" onclick="changePrice('price2A')">Change
+                                    Price</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item3A">
+                            <img src="ASSET-UAS/[Feeds] rotinien-18.jpg" alt="Item 3A Image" class="item-image">
+                            <div class="item-info">
+                                Bolu Tape<br>
+                                Price: RP <input type="text" id="price3A" class="price-input" value="10.000,00"
+                                    readonly> <br>
+                                <input type="number" id="item3AQuantity" class="quantity-input" value="1" min="1"
+                                    max="10">
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button"
+                                    onclick="addToBasket('Bolu Tape', 'item3AQuantity', 'price3A')">Add to
+                                    Basket</button>
+                                <button class="change-price-button" onclick="changePrice('price3A')">Change
+                                    Price</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item4A">
+                            <img src="ASSET-UAS/Pastry Filling.jpeg" alt="Item 4A Image" class="item-image">
+                            <div class="item-info">
+                                Pastry Isi<br>
+                                Price: RP <input type="text" id="price4A" class="price-input" value="10.000,00"
+                                    readonly> <br>
+                                <input type="number" id="item4AQuantity" class="quantity-input" value="1" min="1"
+                                    max="10">
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button"
+                                    onclick="addToBasket('Pastry Isi', 'item4AQuantity', 'price4A')">Add to
+                                    Basket</button>
+                                <button class="change-price-button" onclick="changePrice('price4A')">Change
+                                    Price</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item5A">
+                            <img src="ASSET-UAS/Pastry Pizza.jpeg" alt="Item 5A Image" class="item-image">
+                            <div class="item-info">
+                                Pastry Pizza<br>
+                                Price: RP <input type="text" id="price5A" class="price-input" value="10.000,00"
+                                    readonly> <br>
+                                <input type="number" id="item5AQuantity" class="quantity-input" value="1" min="1"
+                                    max="10">
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button"
+                                    onclick="addToBasket('Pastry Pizza', 'item5AQuantity', 'price5A')">Add to
+                                    Basket</button>
+                                <button class="change-price-button" onclick="changePrice('price5A')">Change
+                                    Price</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item6A">
+                            <img src="ASSET-UAS/FeedsInsta_Roti Goreng-09.jpg" alt="Item 6A Image"
+                                class="item-image">
+                            <div class="item-info">
+                                Risol Mayonaise<br>
+                                Price: RP <input type="text" id="price6A" class="price-input" value="10.000,00"
+                                    readonly> <br>
+                                <input type="number" id="item6AQuantity" class="quantity-input" value="1" min="1"
+                                    max="10">
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button"
+                                    onclick="addToBasket('Risol Mayonaise', 'item6AQuantity', 'price6A')">Add to
+                                    Basket</button>
+                                <button class="change-price-button" onclick="changePrice('price6A')">Change
+                                    Price</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item7A">
+                            <img src="ASSET-UAS/FeedsInsta_Roti Goreng-22.jpg" alt="Item 7A Image"
+                                class="item-image">
+                            <div class="item-info">
+                                Risol Rogut<br>
+                                Price: RP <input type="text" id="price7A" class="price-input" value="10.000,00"
+                                    readonly> <br>
+                                <input type="number" id="item7AQuantity" class="quantity-input" value="1" min="1"
+                                    max="10">
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button"
+                                    onclick="addToBasket('Risol Rogut', 'item7AQuantity', 'price7A')">Add to
+                                    Basket</button>
+                                <button class="change-price-button" onclick="changePrice('price7A')">Change
+                                    Price</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item8A">
+                            <img src="ASSET-UAS/Roti Gandum 1.jpeg" alt="Item 8A Image" class="item-image">
+                            <div class="item-info">
+                                Roti Gandum<br>
+                                Price: RP <input type="text" id="price8A" class="price-input" value="10.000,00"
+                                    readonly> <br>
+                                <input type="number" id="item8AQuantity" class="quantity-input" value="1" min="1"
+                                    max="10">
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button"
+                                    onclick="addToBasket('Roti Gandum', 'item8AQuantity', 'price8A')">Add to
+                                    Basket</button>
+                                <button class="change-price-button" onclick="changePrice('price8A')">Change
+                                    Price</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item9A">
+                            <img src="ASSET-UAS/FeedsInsta_Roti Gorengg-17.jpg" alt="Item 9A Image"
+                                class="item-image">
+                            <div class="item-info">
+                                Roti Goreng Ayam<br>
+                                Price: RP <input type="text" id="price9A" class="price-input" value="10.000,00"
+                                    readonly> <br>
+                                <input type="number" id="item9AQuantity" class="quantity-input" value="1" min="1"
+                                    max="10">
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button"
+                                    onclick="addToBasket('Roti Goreng Ayam', 'item9AQuantity', 'price9A')">Add to
+                                    Basket</button>
+                                <button class="change-price-button" onclick="changePrice('price9A')">Change
+                                    Price</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item10A">
+                            <img src="ASSET-UAS/FeedsInsta_Roti Goreng-11.jpg" alt="Item 10A Image"
+                                class="item-image">
+                            <div class="item-info">
+                                Roti Goreng Cokelat<br>
+                                Price: RP <input type="text" id="price10A" class="price-input" value="10.000,00"
+                                    readonly> <br>
+                                <input type="number" id="item10AQuantity" class="quantity-input" value="1" min="1"
+                                    max="10">
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button"
+                                    onclick="addToBasket('Roti Goreng Cokelat', 'item10AQuantity', 'price10A')">Add
+                                    to
+                                    Basket</button>
+                                <button class="change-price-button" onclick="changePrice('price10A')">Change
+                                    Price</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item11A">
+                            <img src="ASSET-UAS/FeedsInsta_Roti Gorengg-13.jpg" alt="Item 11A Image"
+                                class="item-image">
+                            <div class="item-info">
+                                Roti Boy<br>
+                                Price: RP <input type="text" id="price11A" class="price-input" value="10.000,00"
+                                    readonly> <br>
+                                <input type="number" id="item11AQuantity" class="quantity-input" value="1" min="1"
+                                    max="10">
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button"
+                                    onclick="addToBasket('Roti Boy', 'item11AQuantity', 'price11A')">Add to
+                                    Basket</button>
+                                <button class="change-price-button" onclick="changePrice('price11A')">Change
+                                    Price</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item12A">
+                            <img src="ASSET-UAS/[Feeds] rotinien-32.jpg" alt="Item 12A Image" class="item-image">
+                            <div class="item-info">
+                                Roti Pisang<br>
+                                Price: RP <input type="text" id="price12A" class="price-input" value="10.000,00"
+                                    readonly> <br>
+                                <input type="number" id="item12AQuantity" class="quantity-input" value="1" min="1"
+                                    max="10">
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button"
+                                    onclick="addToBasket('Roti Pisang', 'item12AQuantity', 'price12A')">Add to
+                                    Basket</button>
+                                <button class="change-price-button" onclick="changePrice('price12A')">Change
+                                    Price</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item13A">
+                            <img src="ASSET-UAS/Pastry Almond 1.jpeg" alt="Item 13A Image" class="item-image">
+                            <div class="item-info">
+                                Roti Almond<br>
+                                Price: RP <input type="text" id="price13A" class="price-input" value="10.000,00"
+                                    readonly> <br>
+                                <input type="number" id="item13AQuantity" class="quantity-input" value="1" min="1"
+                                    max="10">
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button"
+                                    onclick="addToBasket('Roti Almond', 'item13AQuantity', 'price13A')">Add to
+                                    Basket</button>
+                                <button class="change-price-button" onclick="changePrice('price13A')">Change
+                                    Price</button>
+                            </div>
+                        </li>
+                        <li class="item-basket" id="item14A">
+                            <img src="ASSET-UAS/Pastry Cheese 1.jpeg" alt="Item 14A Image" class="item-image">
+                            <div class="item-info">
+                                Roti Keju<br>
+                                Price: RP <input type="text" id="price14A" class="price-input" value="10.000,00"
+                                    readonly> <br>
+                                <input type="number" id="item14AQuantity" class="quantity-input" value="1" min="1"
+                                    max="10">
+                            </div>
+                            <div class="item-actions">
+                                <button class="add-button"
+                                    onclick="addToBasket('Roti Keju', 'item14AQuantity', 'price14A')">Add to
+                                    Basket</button>
+                                <button class="change-price-button" onclick="changePrice('price14A')">Change
+                                    Price</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="basket">
+                    <h2>Basket</h2>
+                    <ul id="basket-list"></ul>
+                    
+
+                    <div>
+                        <div class="voucher-tab">
+                            <label for="voucherCode" style="font-weight: bold;">Masukkan Kode Voucher:</label>
+                            <div style="display: flex;">
+                                <input type="text" id="voucherCode" />
+                                <button onclick="applyVoucher()" class="voucher-button">Pakai Voucher</button>
+                            </div>
+                        </div>
+                        <div class="total-price" id="totalPrice">
+                            Total Price: RP 0.00
+                        </div>
+                        <button class="remove-button" onclick="clearBasket()">Clear Basket</button>
+                        <button class="purchase-button" onclick="confirmPurchase()">Confirm Purchase</button>
+                        
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <footer>
