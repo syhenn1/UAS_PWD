@@ -225,16 +225,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-window.addEventListener("scroll", function () {
+// -------------------------SCROLL TRANSPARENT------------------------- //
+
+
+document.addEventListener("DOMContentLoaded", function () {
   var header = document.getElementById("header");
 
-  if (window.scrollY < 100) {
-    header.classList.add("transparent");
-  } else {
-    header.classList.remove("transparent");
-  }
+  window.addEventListener("scroll", function () {
+    console.log("Scroll event triggered. ScrollY:", window.scrollY);
+    if (window.scrollY < 100) {
+      header.classList.add("transparent");
+    } else {
+      header.classList.remove("transparent");
+    }
+  });
 });
-
 // -------------------------OBJECT FILTER------------------------- //
 
 filterObjects("all");

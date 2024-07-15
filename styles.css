@@ -35,6 +35,11 @@ body {
   box-shadow: none;
 }
 
+.transparent {
+  background-color: transparent;
+  box-shadow: none;
+}
+
 .menu a {
   position: relative;
   font-size: 18px;
