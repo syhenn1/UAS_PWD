@@ -208,7 +208,7 @@ body {
 }
 
 .about-us-content {
-  text-align: left;
+  text-align: justify;
   max-width: 800px;
   padding: 20px;
   display: flex;
@@ -1185,6 +1185,7 @@ body {
 
 .about-konten-isi {
   display: flex;
+  text-align: justify;
 }
 .about-konten-isi p {
   font-size: 20px;
